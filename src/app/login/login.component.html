@@ -1,1 +1,55 @@
-<p>login works!</p>
+<body>
+  <nav class="navbar bg-body-tertiary fixed-top">
+    <div class="container-fluid p-0">
+      <a class="navbar-brand zoom-img" href="#" id="perfilTrigger">
+        <img src="../../assets/image/voltar.svg" alt="Logo" width="40" height="" class="d-inline-block align-text-top zoom-img">
+      </a>
+    </div>
+  </nav>
+
+  <div>
+    <div class="row justify-content-center align-items-center">
+      <div class="md-4">
+        <div class="outro-container BordaRedonda margem1">
+          <div class="container CorConteiner1 BordaRedonda pt-3 p-3 m-0">
+            <div class="container">
+              <div class="row justify-content-center align-items-stretch">
+                <div class="container bg-light p-4 BordaRedonda">
+                  <form>
+                    <div class="form-group cabin2">
+                      <label for="email" class="escritaForm">Email:</label>
+                      <input type="email" class="form-control cabin2 form1" id="email" placeholder="Seu email">
+                    </div>
+                    <div class="form-group cabin2">
+                      <label for="senha" class="escritaForm">Senha:</label>
+                      <input type="password" class="form-control cabin2 form1" id="senha" placeholder="Sua senha">
+                    </div>
+                    <div class="container">
+                      <div class="row">
+                        <div class="col pr-0 pl-2" style="padding-top:10px;">
+                          <button type="button" class="btn botao2" (mouseover)="zoomIn($event)" (mouseout)="zoomOut($event)">
+                            <img src="../../assets/image/certo.svg" alt="">
+                          </button>
+                        </div>
+                        <div class="col p-0">
+                          <div>
+                            <div style="text-align:right;">
+                              <div style="text-align:right;" class="flex-wrap">
+                                <h6 style="margin-right: 5px; display: inline; font-size: small;">Não possui uma conta?</h6>
+                                <button type="button" class="btn botao4 cabin2 text-right mr-0">clique aqui!</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>  
+                      </div>
+                    </div>   
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,1 +1,258 @@
-<p>home works!</p>
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Bootstrap</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Cabin:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+    <style>
+        .cabin {
+            font-family: "Cabin", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-variation-settings:
+                "wdth" 100;
+        }
+
+        .cabin2 {
+            font-family: "Cabin", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 700;
+            font-style: normal;
+            font-variation-settings:
+                "wdth" 100;
+        }
+
+        .outro-container {
+            padding: 10px;
+            background-color: white;
+            border: 5px solid #3C9E7D;
+            /* Cor da borda: azul */
+            border-radius: 10px;
+            /* margin-left: 30px; */
+            /* margin-right: 30px; */
+        }
+
+        .BordaRedonda {
+            border-radius: 20px;
+        }
+
+        .CorConteiner1 {
+            background-color: #66CDAA;
+        }
+
+        @media screen and (max-width: 317px) {
+            body {
+                min-width: 317px;
+            }
+        }
+
+        body {
+            background-image: url(image/fundo.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            padding-top: 56px;
+        }
+
+        .item {
+            /* Estilos do item */
+            transition: transform 0.3s ease;
+            /* Adiciona transição suave */
+        }
+
+        .zoomed {
+            transform: scale(1.2);
+            /* Aplica o efeito de zoom */
+        }
+
+        .zoom-img {
+            transition: transform 0.2s;
+            /* Transição suave */
+        }
+
+        /* Efeito de zoom ao passar o mouse */
+        .zoom-img:hover {
+            transform: scale(1.2);
+            /* Aumenta a escala para 120% */
+        }
+
+        .margin2 {
+            margin-top: 50%;
+        }
+
+        @media screen and (min-width: 750px) {
+            .d-flex.justify-content-center.align-items-center {
+                height: 100vh;
+            }
+        }
+
+        #custom-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        #dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: #66CDAA;
+            border: 5px solid #3C9E7D;
+            border-radius: 10px;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            padding: 12px 16px;
+            z-index: 1;
+
+        }
+
+        #dropdown-menu li {
+            list-style: none;
+        }
+
+        #dropdown-menu li a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        #dropdown-menu li a:hover {
+            color: #3C9E7D;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar bg-body-tertiary fixed-top">
+        <div id="custom-dropdown" class="container-fluid">
+            <a class="navbar-brand" href="#" id="perfilTrigger">
+                <img src="image\perfil.svg" alt="Dropdown button" id="dropdown-button">
+            </a>
+            <ul id="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <div class="container">
+            <!-- Conteiner 1 -->
+            <div class="row justify-content-center align-items-center">
+                <div class="md-4">
+                    <div class="outro-container BordaRedonda my-2 mx-5 margin2">
+                        <div class="item" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
+                            <div class="container CorConteiner1 BordaRedonda pt-3">
+                                <div class="container bg-light p-4 text-center BordaRedonda">
+                                    <div class="">
+                                        <div class="d-flex justify-content-center">
+                                            <img src="image\imagemMedico.svg" alt="" class="img-fluid px-3">
+                                        </div>
+                                    </div>
+                                </div>
+                                <h5 class="text-center cabin2 pt-2 pb-2 m-0" style="font-size: xx-large; color: white;">
+                                    MÉDICO</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Conteiner 2 -->
+                <div class="md-4">
+                    <div class="outro-container BordaRedonda my-2 mx-5">
+                        <div class="item" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
+                            <div class="container CorConteiner1 BordaRedonda pt-3">
+                                <div class="container bg-light p-4 text-center BordaRedonda">
+                                    <div class="">
+                                        <div class="d-flex justify-content-center">
+                                            <img src="image\imagemPaciente.svg" alt="" class="img-fluid px-3">
+                                        </div>
+                                    </div>
+                                </div>
+                                <h5 class="text-center cabin2 pt-2 pb-2 m-0" style="font-size: xx-large; color: white;">
+                                    PACIENTES</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Conteiner 3 -->
+                <div class="md-4">
+                    <div class="outro-container BordaRedonda my-2 mx-5">
+                        <div class="item" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
+                            <div class="container CorConteiner1 BordaRedonda pt-3">
+                                <div class="container bg-light p-4 text-center BordaRedonda">
+                                    <div class="">
+                                        <div class="d-flex justify-content-center">
+                                            <img src="image\imagemRemedio.svg" alt="" class="img-fluid px-3">
+                                        </div>
+                                    </div>
+                                </div>
+                                <h5 class="text-center cabin2 pt-2 pb-2 m-0" style="font-size: xx-large; color: white;">
+                                    REMEDIOS</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+            function ajustarMargens() {
+                if (window.innerWidth < 578) {
+                    $(".outro-container").css({ "margin-right": "30px", "margin-left": "30px" });
+                } else {
+                    $(".outro-container").css({ "margin-right": "", "margin-left": "" });
+                }
+            }
+
+            ajustarMargens();
+
+            $(window).resize(function () {
+                ajustarMargens();
+            });
+        });
+
+        function zoomIn(element) {
+            element.classList.add('zoomed');
+        }
+
+        function zoomOut(element) {
+            element.classList.remove('zoomed');
+        }
+    </script>
+
+    <script>
+        // Ativar o offcanvas quando a imagem do perfil for clicada
+        document.getElementById('perfilTrigger').addEventListener('click', function () {
+            var offcanvas = new bootstrap.Offcanvas(document.getElementById('perfilOffcanvas'));
+            offcanvas.toggle();
+        });
+
+        document.getElementById("perfilTrigger").addEventListener("click", function (event) {
+            event.preventDefault(); // Para evitar o comportamento padrão de um clique em um link
+
+            var menu = document.getElementById("dropdown-menu");
+            if (menu.style.display === "none" || menu.style.display === "") {
+                menu.style.display = "block";
+            } else {
+                menu.style.display = "none";
+            }
+        });
+
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
