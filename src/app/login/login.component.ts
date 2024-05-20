@@ -20,10 +20,6 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  login() {    
-    this.router.navigate(['/layout/prontuario/']);
-  }
-
   zoomIn(event: MouseEvent) {
     if (isPlatformBrowser(this.platformId)) {
       const button = event.target as HTMLElement;
@@ -42,6 +38,10 @@ export class LoginComponent implements OnInit {
         this.renderer.removeClass(img, 'zoomed');
       }
     }
+  }
+
+  cadastro(){  
+    this.router.navigate(['cadastro']);
   }
 
   adjustBodyOverflow() {

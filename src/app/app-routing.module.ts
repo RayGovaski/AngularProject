@@ -22,12 +22,12 @@ const routes: Routes = [
   children: [
     { path: 'prontuarios-paciente', component: ProntuariosPacienteComponent },
     { path: 'lista-usuario', component: RemedioComponent },
-    { path: 'perfil', component: PerfilComponent },
     { path: 'prontuario/:key', component: ProntuarioComponent },
     { path: 'lista-paciente', component: PacientesMedicoComponent },
   ]
 },
 {path: 'imagem', component: ImagemComponent},
+{path: 'cadastro', component: CadastroComponent},
 {path: '', component: LoginComponent},
 ];
 
