@@ -24,6 +24,11 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { HttpClientModule } from '@angular/common/http';
 import { ImagemComponent } from './imagem/imagem.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 @NgModule({
   declarations: [
@@ -40,7 +45,11 @@ import { ImagemComponent } from './imagem/imagem.component';
     PerfilComponent,
     LayoutComponent,
     DashboardComponent,
-    ImagemComponent
+    ImagemComponent,
+    SignInComponent,
+    SignUpComponent,
+    ForgotPasswordComponent,
+    VerifyEmailComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +60,8 @@ import { ImagemComponent } from './imagem/imagem.component';
     AngularFireModule.initializeApp(environment.firebase),
     //import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
     AngularFireDatabaseModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    AngularFireAuthModule
   ],
   providers: [
     provideClientHydration()

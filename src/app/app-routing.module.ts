@@ -13,7 +13,10 @@ import { HomeComponent } from './home/home.component';
 import { PacientesMedicoComponent } from './pacientes-medico/pacientes-medico.component';
 import { ProntuariosPacienteComponent } from './prontuarios-paciente/prontuarios-paciente.component';
 import { PerfilComponent } from './perfil/perfil.component';
-import { ImagemComponent } from './imagem/imagem.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 
 const routes: Routes = [
   {
@@ -26,9 +29,12 @@ const routes: Routes = [
     { path: 'lista-paciente', component: PacientesMedicoComponent },
   ]
 },
-{path: 'imagem', component: ImagemComponent},
-{path: 'cadastro', component: CadastroComponent},
-{path: '', component: LoginComponent},
+  { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
+  { path: 'sign-in', component: SignInComponent },
+  { path: 'register-user', component: SignUpComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'verify-email-address', component: VerifyEmailComponent }
 ];
 
 @NgModule({
