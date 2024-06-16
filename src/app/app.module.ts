@@ -1,71 +1,58 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MedicoComponent } from './medico/medico.component';
-import { PacienteComponent } from './paciente/paciente.component';
-import { RemedioComponent } from './remedio/remedio.component';
-import { LoginComponent } from './login/login.component';
-import { CadastroComponent } from './cadastro/cadastro.component';
-import { ProntuarioComponent } from './prontuario/prontuario.component';
-import { HomeComponent } from './home/home.component';
-import { PacientesMedicoComponent } from './pacientes-medico/pacientes-medico.component';
-import { ProntuariosPacienteComponent } from './prontuarios-paciente/prontuarios-paciente.component';
-import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
-import { PerfilComponent } from './perfil/perfil.component';
-import { LayoutComponent } from './layout/layout.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-import { Router } from 'express';
-import { environment } from '../environment/enviroment';
-import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
-import { AngularFireStorageModule } from '@angular/fire/compat/storage';
-import { HttpClientModule } from '@angular/common/http';
-import { ImagemComponent } from './imagem/imagem.component';
-import { SignInComponent } from './components/sign-in/sign-in.component';
-import { SignUpComponent } from './components/sign-up/sign-up.component';
-import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
-import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
-import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { environment } from 'src/environments/environment';
+import { MaterialModule } from './material/material/material.module';
+import { DoctorComponent } from './component/dashboard/doctor/doctor.component';
+import { PatientComponent } from './component/dashboard/patient/patient.component';
+import { SidebarComponent } from './component/dashboard/sidebar/sidebar.component';
+import { AddDoctorComponent } from './component/dashboard/doctor/add-doctor/add-doctor.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DeleteDoctorComponent } from './component/dashboard/doctor/delete-doctor/delete-doctor.component';
+import { ViewDoctorComponent } from './component/dashboard/doctor/view-doctor/view-doctor.component';
+import { AddPatientComponent } from './component/dashboard/patient/add-patient/add-patient.component';
+import { DeletePatientComponent } from './component/dashboard/patient/delete-patient/delete-patient.component';
+import { ViewPatientComponent } from './component/dashboard/patient/view-patient/view-patient.component';
+import { LoginComponent } from './component/auth/login/login.component';
+import { VerifyEmailComponent } from './component/auth/verify-email/verify-email.component';
+import { RegisterComponent } from './component/auth/register/register.component';
+import { ForgotPasswordComponent } from './component/auth/forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MedicoComponent,
-    PacienteComponent,
-    RemedioComponent,
+    DoctorComponent,
+    PatientComponent,
+    SidebarComponent,
+    AddDoctorComponent,
+    DeleteDoctorComponent,
+    ViewDoctorComponent,
+    AddPatientComponent,
+    DeletePatientComponent,
+    ViewPatientComponent,
     LoginComponent,
-    CadastroComponent,
-    ProntuarioComponent,
-    HomeComponent,
-    PacientesMedicoComponent,
-    ProntuariosPacienteComponent,
-    PerfilComponent,
-    LayoutComponent,
-    DashboardComponent,
-    ImagemComponent,
-    SignInComponent,
-    SignUpComponent,
-    ForgotPasswordComponent,
-    VerifyEmailComponent
+    VerifyEmailComponent,
+    RegisterComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+    MaterialModule,
     ReactiveFormsModule,
-    RouterModule,
-    HttpClientModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    //import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
-    AngularFireDatabaseModule,
-    AngularFireStorageModule,
-    AngularFireAuthModule
+    FormsModule
   ],
-  providers: [
-    provideClientHydration()
-  ],
-  bootstrap: [AppComponent]
+  providers: [],
+  bootstrap: [AppComponent],
+  entryComponents: [AddDoctorComponent]
 })
 export class AppModule { }
