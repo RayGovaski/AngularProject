@@ -49,4 +49,21 @@ export class DataService {
   getPatientById(id : any) {
     return this.afs.doc("Patient/"+id).valueChanges();
   }
+
+  addMedicine(medicine : any) {
+    medicine.medicine_id = this.afs.createId();
+    return this.afs.collection("Medicine/").add(medicine);
+  }
+
+  getAllMedicines() {
+    return this.afs.collection("Medicine/").snapshotChanges();
+  }
+
+  updateMedicine(medicine : any) {
+    return this.afs.doc("Medicine/"+medicine.medicine_id).update(medicine);
+  }
+
+  deleteMedicine(id : string) {
+    return this.afs.doc("Medicine/"+id).delete();
+  }
 }

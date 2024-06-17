@@ -23,6 +23,8 @@ import { LoginComponent } from './component/auth/login/login.component';
 import { VerifyEmailComponent } from './component/auth/verify-email/verify-email.component';
 import { RegisterComponent } from './component/auth/register/register.component';
 import { ForgotPasswordComponent } from './component/auth/forgot-password/forgot-password.component';
+import { MedicineComponent } from './component/dashboard/medicine/medicine.component';
+import { AddMedicineComponent } from './component/dashboard/medicine/add-medicine/add-medicine.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { ForgotPasswordComponent } from './component/auth/forgot-password/forgot
     LoginComponent,
     VerifyEmailComponent,
     RegisterComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    MedicineComponent,
+    AddMedicineComponent
   ],
   imports: [
     BrowserModule,

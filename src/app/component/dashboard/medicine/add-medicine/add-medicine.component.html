@@ -1,0 +1,67 @@
+<h2 mat-dialog-tile> {{ title }} </h2>
+<mat-divider></mat-divider>
+
+<mat-dialog-content [formGroup] = "form">
+
+    <mat-grid-list cols="2">
+      <mat-grid-tile>
+        <div>
+          <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput
+                    placeholder="Ex. Paracetamol"
+                    formControlName="medicine_name"
+                    required>
+            <mat-error *ngIf="form.get('medicine_name')?.invalid || form.get('medicine_name')?.dirty || form.get('medicine_name')?.touched">Enter full name</mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Generic Name: </mat-label>
+            <input matInput
+                    placeholder="Ex. Paracetamol"
+                    formControlName="genericName"
+                    required>
+            <mat-error *ngIf="form.get('genericName')?.invalid || form.get('genericName')?.dirty || form.get('genericName')?.touched">Enter valid Generic Name number</mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Side Effects</mat-label>
+            <input matInput
+                    placeholder="ex. headache, dizziness, etc."
+                    formControlName="sideEffects"
+                    required>
+            <mat-error *ngIf="form.get('sideEffects')?.invalid || form.get('sideEffects')?.dirty || form.get('sideEffects')?.touched">Enter valid Side Effects </mat-error>
+          </mat-form-field>
+        </div>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <div>
+          <mat-form-field class="mt-4">
+          <mat-label class="me-3">Prescription Required? </mat-label>
+          <br>
+          <mat-radio-group aria-label="Prescription Required?" color="primary" formControlName="prescriptionRequired">
+            <mat-radio-button value="yes">Yes</mat-radio-button>
+            <mat-radio-button value="no">No</mat-radio-button>
+          </mat-radio-group>
+        </mat-form-field>
+          <mat-form-field>
+            <mat-label>Expiry Date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="expiryDate">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="form.get('expiryDate')?.invalid || form.get('expiryDate')?.dirty || form.get('expiryDate')?.touched">Choose valid admission date</mat-error>
+          </mat-form-field>
+
+        </div>
+      </mat-grid-tile>
+
+    </mat-grid-list>
+
+</mat-dialog-content>
+
+<div mat-dialog-actions>
+  <button mat-raised-button mat-dialog-close (click)="cancelRegistration()">Cancel</button>
+  <button mat-raised-button color="primary" mat-dialog-close (click)="registerMedicine()" [disabled]="form.invalid"> {{buttonName}} </button>
+</div>
